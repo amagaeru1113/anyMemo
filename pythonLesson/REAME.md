@@ -157,3 +157,54 @@ class ToyotaCar(Car):
 </details>
 
 
+# section8 ファイル操作とシステム
+<details>
+<summary>memo</summary>
+
+ 
+ ファイルの作成
+ 
+```
+ with open('filenPath', 'w') as f:
+     f.write('test')
+ ```
+
+ファイルの読み込み
+```
+ with open('filenPath', 'r') as f:
+     print(f.read())
+
+     # もしくは以下でchunkごとに文字を取り出せる
+     while True:   
+        chunk = 2
+        line = f.readline(chunk)
+        if not line:
+            break
+```
+
+- モード指定
+    - w -> w+にすることで書き込みと同時に読み込みもできる。しかし、この場合seek(0)で現在地を最初に戻す必要がある。
+
+- テンプレート
+    - string.Template()でテンプレート作ることで、変数への注入が行える
+
+- csvの書き込みと読み込み
+    - ファイルの書き込みと読み込みと大体同じ。
+    - fieldNamesの指定をし、rowの挿入は辞書形式で行う
+
+- ファイル操作
+    - os(ファイル操作全般), pathlib(ファイル作成), glob(ファイル検索), shutil(高機能なファイル操作)を使えば大体できる
+
+
+- tarfile、zipfile
+    - ファイルの圧縮展開で使う
+
+- tempfile
+    - python上で一時的なファイルを作れる。処理終了時に削除される。
+
+- datetime
+    - pythonの時間取得とかのライブラリ
+
+ 
+ 
+</details>
