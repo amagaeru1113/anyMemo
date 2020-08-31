@@ -6,7 +6,7 @@ services:
     environment:
         TZ: "Asia/Tokyo"  
     volumes:
-        - ./lesson:/code
+        - .:/code
     ports:
      - "8080:80"
     tty: true
