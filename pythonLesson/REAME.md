@@ -216,7 +216,7 @@ class ToyotaCar(Car):
 <summary>memo</summary>
  
 
-# **このセクションの動画は何回か見直せ**
+# **このセクションの動画は何回か見直そう**
 - 自分で書いたのがmyCode、講師作成の物がexample
     - 関数ベースでとりあえず動くものとという意識で作成
     - templateはpyで書いたが、必ずしもpyである必要はないし、これだと一々スクロールがめんどいなと思った
@@ -233,5 +233,68 @@ class ToyotaCar(Car):
     - ロボットの言動ならコンストラクタでhelloを言わせる（最初に実行されるから）
     - レストランはロボットの使ったデータをまた使うから継承
 
+
+</details>
+
+
+# section10 コードスタイル
+
+
+<details>
+<summary>memo</summary>
+ 
+ Pythonのコード規約 [PEP]
+ 
+- 文章のようにPythonを書く
+    - 一番綺麗で読みやすいコードはドキュメントが無くても、コードを読んで何をしているかが分かるコード
+
+- シングルクオートとダブルクオートの使い分け
+    - 併用する時、大体はダブルクオートを外側におく
+
+- 便利なツール
+    - flake8；コードチェック
+    - autopep8：コード規約にしたがって自動整形
+
+</details>
+
+# section11 コンフィグとロギング
+
+
+<details>
+<summary>memo</summary>
+
+参考URL
+[Pythonでロギングを学ぼう](https://qiita.com/__init__/items/91e5841ed53d55a7895e)
+[logging doc](https://docs.python.org/ja/3/library/logging.html)
+
+
+- configの作成
+    - configParserでconfig.iniの作成・読み込み
+    - yamlでconfig.ymlの作成・読み込み
+    - 個人的にはtoml使うことが多い。poetryもtoml。
+    - circleciの設定とかはyamlで書いていた気がする。
+
+- logging
+    - loglevel：下に行くほど重要度が高い。基本はwarning以上がログ表示される
+        - debug
+        - info
+        - warning
+        - error
+        - critical
+    - `logger = getLogger(__name__)`を基本使う
+
+- optparse
+    - ファイル実行時に渡す引数やoptionを設定できる
+    - config書くほどではないが、ハードコードしたくないこととかに使うのか？
+    - あとはloglevelを渡すのにいいかもしれない
+
+- 仮想環境
+    - virtualenvが説明されていた
+    - 個人的にはローカルで簡単に試す程度ならpyenv+poetryを使っている
+        - pythonバージョン：pyenv
+        - ライブラリ管理:poetry
+    - 最近はdockerに慣れるために逐一Dockerfileを書いている
+        - pythonバージョン:Docker
+        - ライブラリ管理:poetyr
 
 </details>
