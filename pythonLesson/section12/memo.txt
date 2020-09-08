@@ -1,0 +1,43 @@
+データベース
+pythonでどうコネクションするか
+
+リレーショナルデータベース RDB
+
+sqlAlchemyをpythonで使う
+
+NoSQLの種類
+キーバリュー型 
+ワイドからむ型
+ドキュメント型
+グラフ型
+
+これ使えばmysql-server使えるかも
+https://qiita.com/YuitoSato/items/4a4b46f5670b45739a37
+
+
+mysqldbを使うために色々してしまっているか
+https://qiita.com/ab-boy_ringo/items/f05bb6329f51e1632965
+https://github.com/PyMySQL/mysqlclient-python
+
+sudo apt-get install python3-dev default-libmysqlclient-dev build-essential #
+をしたら
+pip install mysqlclientが通った
+通ったのでこのままMySQLdbを使って酒井講座をうける
+
+
+
+今のdocker-composeで
+apt install mariadb-client
+mysql -h sample-mysql -u root -D test-db -p
+で接続可能
+
+
+参考サイト
+
+https://qiita.com/YuitoSato/items/4a4b46f5670b45739a37
+https://qiita.com/saken649/items/00e752d89f2a6c5a82f6
+https://qiita.com/ab-boy_ringo/items/f05bb6329f51e1632965
+https://qiita.com/Esfahan/items/70047ea2e4fecab4e2cc
+https://github.com/PyMySQL/mysqlclient-python
+https://qiita.com/valzer0/items/2f27ba98397fa7ff0d74
+https://qiita.com/aseanchild1400/items/d3580366054fee3d2703
