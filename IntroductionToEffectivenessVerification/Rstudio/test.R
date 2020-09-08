@@ -1,0 +1,10 @@
+x <- 1:5
+y <- 1:5
+df <- data.frame(x, y)
+readr::write_csv(df, "data/test.csv")
+
+df2 <- readr::read_csv("data/test.csv")
+
+library(ggplot2)
+qplot(df2$x, df2$y)
+ggsave("data/test.pdf")
