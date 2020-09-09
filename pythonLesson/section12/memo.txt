@@ -15,7 +15,7 @@ NoSQLの種類
 https://qiita.com/YuitoSato/items/4a4b46f5670b45739a37
 
 
-mysqldbを使うために色々してしまっているか
+mysqldbを使うために色々している
 https://qiita.com/ab-boy_ringo/items/f05bb6329f51e1632965
 https://github.com/PyMySQL/mysqlclient-python
 
@@ -41,3 +41,13 @@ https://qiita.com/Esfahan/items/70047ea2e4fecab4e2cc
 https://github.com/PyMySQL/mysqlclient-python
 https://qiita.com/valzer0/items/2f27ba98397fa7ff0d74
 https://qiita.com/aseanchild1400/items/d3580366054fee3d2703
+
+
+
+mongoDBとneo4jは聞くだけに止める
+docker-composeで作レバできる
+mongoDB https://qiita.com/mistolteen/items/ce38db7981cc2fe7821a
+
+hbase https://qiita.com/blueskyarea/items/4a91970bf380107bd590
+
+neo4j https://neo4j.com/developer/docker-run-neo4j/

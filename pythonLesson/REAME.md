@@ -298,3 +298,43 @@ class ToyotaCar(Car):
         - ライブラリ管理:poetyr
 
 </details>
+
+
+# section12 データベース
+
+<details>
+<summary>memo</summary>
+
+pythonでDBに色々する
+
+ライブラリ
+- sqlalchemy：あとでDB切替ができる 
+- mysql関連
+    - mysql-connector-python
+    - MySQLdb
+    - pymysql
+- mongoDB関連
+    - pymongo
+
+DBの種類
+- RDB（リレーショナルデータベース）
+    - MySQL
+    - postgress
+- NoSQL
+    - キーバリュー型 (DBM、memcash)
+    - ワイドカラム型 (Hbase)
+    - ドキュメント型 (MongoDB)
+    - グラフ型 (neo4j)
+
+
+sqlalchemyで立ち上がりを書いて、mysqlに向き先を変えて書き込むようにするとやり直しが少なくて済みそう。
+必要に応じてpostgressにできる。今でもRDB多いし、結局GCPのBigQuery使っている。
+
+
+
+参考
+【超入門】RDBとNoSQLの違いに着目！NoSQLに求めるものとは？
+https://tech-blog.rakus.co.jp/entry/20180919/nosql/bigdata
+
+
+</details>

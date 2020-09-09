@@ -20,7 +20,7 @@ services:
   mysql:
     container_name: sample-mysql
     image: mysql:5.7
-    restart: 'always'
+    # restart: 'always'
     hostname: sample-db
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
