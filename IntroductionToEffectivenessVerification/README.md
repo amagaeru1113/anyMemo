@@ -14,6 +14,7 @@ https://github.com/ghmagazine/cibook/
 - 複数に介入がある場合の分析方法はあるのか
 
 
+
 ## 1章：セレクションバイアスとRCT
 
 <details>
@@ -26,45 +27,55 @@ https://github.com/ghmagazine/cibook/
 - 推定：標本集団から母集団の性質を推測すること
 
 #### ポテンシャルアウトカムフレームワーク
-ユーザーを$i$、介入の有無を01とし、$Z_{i}$で表す。つまりはユーザー1に介入する場合$Z_{1}=1$。
-このユーザの売り上げを$Y_{i}$で表す。つまりはユーザー1に介入があった場合$Y_{i}^{(1)}(Z_{i}=1)$。
+ユーザーを<img src="https://latex.codecogs.com/gif.latex?i" />、介入の有無を01とし、<img src="https://latex.codecogs.com/gif.latex?Z_{i}" />で表す。つまりはユーザー1に介入する場合<img src="https://latex.codecogs.com/gif.latex?Z_{i}=1" />。
+このユーザの売り上げを<img src="https://latex.codecogs.com/gif.latex?Y_{i}" />で表す。つまりはユーザー1に介入があった場合、<img src="https://latex.codecogs.com/gif.latex?Y_{i}^{(1)}(Z_{i}=1)" />。
 これは介入の有無でとる値が二値なので以下のように一つの式に整理できる。
 
-$$
-Y_{i} = Y_{i}^{(0)}(1-Z_{i}) + Y_{i}^{(1)}Z_{i}
-$$
+<img src="https://latex.codecogs.com/gif.latex?Y_{i}&space;=&space;Y_{i}^{(0)}(1-Z_{i})&space;&plus;&space;Y_{i}^{(1)}Z_{i}" />
 
-この単一のサンプル$i$に介入が行われた場合の売り上げと行われなかった場合の売り上げの差に介入の本当の効果があると考えることをポテンシャルアウトカムフレームワークという。ポテンシャルアウトカムとはつまりは反実仮想のことをさす。AとBの選択肢があるとき、私はAを選択してなんらかの結果を得た。この時のポテンシャルアウトカムはBを選択した時の結果のことをさす。売り上げならば介入した時の結果が$Y_{i}^{(1)}$ならば、ポテンシャルアウトカムは$Y_{i}^{(0)}$である。
+<br>
+<br>
 
-介入の効果を表す値を$\tau$とすると、ユーザーiへの効果の度合いを売り上げの差分の形で表せる
+この単一のサンプル$i$に介入が行われた場合の売り上げと行われなかった場合の売り上げの差に介入の本当の効果があると考えることをポテンシャルアウトカムフレームワークという。ポテンシャルアウトカムとはつまりは反実仮想のことをさす。AとBの選択肢があるとき、私はAを選択してなんらかの結果を得た。この時のポテンシャルアウトカムはBを選択した時の結果のことをさす。売り上げならば介入した時の結果が<img src="https://latex.codecogs.com/gif.latex?Y_{i}^{(1)}" />ならば、ポテンシャルアウトカムは<img src="https://latex.codecogs.com/gif.latex?Y_{i}^{(0)}" />である。
 
-$$
-\tau_{i} = Y_{i}^{(1)} - Y_{i}^{(0)} 
-$$
+介入の効果を表す値を<img src="https://latex.codecogs.com/gif.latex?\tau" />とすると、ユーザーiへの効果の度合いを売り上げの差分の形で表せる
 
-しかし実際にはこの計算式のどちらか一方の結果（売り上げ）しか常に手に入れられない。分かるのはユーザー$i$への介入の有無とその結果のみであって、ポテンシャルアウトカムは得られない。つまりはある個人に関する比較はできないことになる。
+
+<img src="https://latex.codecogs.com/gif.latex?\tau_{i} = Y_{i}^{(1)} - Y_{i}^{(0)}" />
+
+<br>
+<br>
+
+
+
+しかし実際にはこの計算式のどちらか一方の結果（売り上げ）しか常に手に入れられない。分かるのはユーザー<img src="https://latex.codecogs.com/gif.latex?i" />への介入の有無とその結果のみであって、ポテンシャルアウトカムは得られない。つまりはある個人に関する比較はできないことになる。
 
 そこで、次に考えるのはユーザーのグループである。介入の有無でグループを作り、これらを比較することで「平均的な」効果を測る。
 これは売り上げの期待値を比較し、差を得ることである。
 
-$$
-\tau = E[Y_{(1)}] - E[Y_{(0)}]
-$$
+<img src="https://latex.codecogs.com/gif.latex?\tau = E[Y_{(1)}] - E[Y_{(0)}]" />
+
+<br>
+<br>
 
 E[]は期待値を表し、母集団における平均を表している。つまりは興味のある介入の効果とは、母集団に置いて介入の有無ぞれぞれの場合の売り上げの平均の差である。このような効果は母集団の平均的な効果を示し、平均処置効果（Average treatment Effect: ATE）と呼ばれる。
 
 上記式を変形すると、介入がなかった場合の売り上げに平均処置効果の補正項を加えることで介入があった場合の売り上げを求める式に改変できる。
 
-$$
-E[Y_{(1)}]  =  E[Y_{(0)}] + \tau
-$$
+<img src="https://latex.codecogs.com/gif.latex?E[Y_{(1)}]  =  E[Y_{(0)}] + \tau" />
+
+<br>
+<br>
+
 
 #### 平均的な効果の比較
 実験をせず（ランダム化せず）に担当者が選んだユーザーグループに介入の有無を割り振る場合、最も簡単な効果の推定はk区グループのユーザー売り上げの平均を差分をとることである。ここでの効果の推定値を$\hat{\tau}_{naive}$と表す。分析するデータのサンプルサイズをNとすると、
 
-$$
-\hat{\tau}_{naive} = \frac{1}{\sum_{i=1}^{N}Z_{i}} \sum_{i=1}^{N}Y_{i}Z_{i} - \frac{1}{1- \sum_{i=1}^{N}Z_{i}} \sum_{i=1}^{N}Y_{i}(1- Z_{i})
-$$
+
+<img src="https://latex.codecogs.com/gif.latex?\hat{\tau}_{naive} = \frac{1}{\sum_{i=1}^{N}Z_{i}} \sum_{i=1}^{N}Y_{i}Z_{i} - \frac{1}{1- \sum_{i=1}^{N}Z_{i}} \sum_{i=1}^{N}Y_{i}(1- Z_{i})" />
+
+<br>
+<br>
 
 実際には100の効果しかないデータで300の効果があるという分析結果が得られるのはなぜか？グループ間の比較が母集団の何を推定しているか？
 これはセレクションバイアルの分が本当の効果(100)に加算されているためである
@@ -119,60 +130,64 @@ t検定のプロセス
 
 #### 回帰分析
 ##### 単回帰分析：変数が一つ
-目的変数$Y$と入力となる変数$X$を用いて、$X$と$Y$の関係性を分析する。
+目的変数<img src="https://latex.codecogs.com/gif.latex?Y" />と入力となる変数$X$を用いて、<img src="https://latex.codecogs.com/gif.latex?X" />と<img src="https://latex.codecogs.com/gif.latex?Y" />の関係性を分析する。
 この時、関係性に線形性を仮定する。すると一次式(傾きと切片)で関係を表せる。
-ここで$u_{i}$は誤差項。
+ここで<img src="https://latex.codecogs.com/gif.latex?u_{i}" />は誤差項。
 
-$$
-Y_{i} = \beta_{0} + \beta_{1}X_{i}+u_{i}
-$$
 
-$\beta_{0},\beta_{1}$は真の値であるがこれはわからない。そこで手持ちのデータで得られる傾きと切片をそれぞれハットをつけて表し、これらを求めることとする。
-$$
-\hat{\beta_{0}}, \hat{\beta_{1}} = \argmin_{\beta_{0}, \beta_{1}} \sum_{i=1}^{N} (Y_{i} - \beta_{0} - \beta_{1}X_{i})^{2}
-$$
+<img src="https://latex.codecogs.com/gif.latex?Y_{i} = \beta_{0} + \beta_{1}X_{i}+u_{i}" />
+
+<br>
+<br>
+
+<img src="https://latex.codecogs.com/gif.latex?\beta_{0},\beta_{1}" />は真の値であるがこれはわからない。そこで手持ちのデータで得られる傾きと切片をそれぞれハットをつけて表し、これらを求めることとする。
+
+
+<img src="https://latex.codecogs.com/gif.latex?\hat{\beta_{0}},&space;\hat{\beta_{1}}&space;=&space;\arg&space;min_{\beta_{0},&space;\beta_{1}}&space;\sum_{i=1}^{N}&space;(Y_{i}&space;-&space;\beta_{0}&space;-&space;\beta_{1}X_{i})^{2}" />
+
+<br>
+<br>
 
 上記は最小二乗法と呼ばれ、傾き・切片に関してそれぞれ微分することで極値を求めることができ、最適なパラメータの推定ができる。
 
 推定は母集団上での回帰分析で得られるパラメータに対して行われている。
 
 ##### 効果分析のための回帰分析
-介入の効果は施策を行った場合と行わなかった場合の結果の期待値の差分$\tau=E[Y^{(1)}] - E[Y^{(0)}]$で表される。
+介入の効果は施策を行った場合と行わなかった場合の結果の期待値の差分
+<img src="https://latex.codecogs.com/gif.latex?\tau=E[Y^{(1)}] - E[Y^{(0)}]" />で表される。
 
 効果分析のための回帰分析では以下の変数を用いる。
-- 被説明変数($Y$：dependent variable) 介入による効果を確認したい変数
+- 被説明変数(Y：dependent variable) 介入による効果を確認したい変数
 - 説明変数　効果に影響する変数
-    - 介入変数($Z$：treatment variable)　施策の有無を表す変数
-    - 共変量($X$：controle variable) 介入・施策の有無で傾向が異なっていると想定される変数
+    - 介入変数(Z：treatment variable)　施策の有無を表す変数
+    - 共変量(X：controle variable) 介入・施策の有無で傾向が異なっていると想定される変数
 
 
 共変量は複数である場合が多く。このように説明変数が複数ある回帰分析を重回帰分析という。
 推定したいものはZ、Xを与えられた時のYの期待値であるので
 
-$$
-E[Y|X,Z] = \beta_{0} + \beta_{1}X+\beta_{2}Z
-$$
+<img src="https://latex.codecogs.com/gif.latex?E[Y|X,Z] = \beta_{0} + \beta_{1}X+\beta_{2}Z" />
+
 重回帰分析も条件付き期待値と回帰分析の関係性が成立
 
 
-$$
-Y = E[Y|X,Z] + u = \beta_{0} + \beta_{1}X+\beta_{2}Z + u
-$$
+<img src="https://latex.codecogs.com/gif.latex?Y = E[Y|X,Z] + u = \beta_{0} + \beta_{1}X+\beta_{2}Z + u" />
 
-この時誤差項の条件付き期待値$E[u|X,Z]=0$であり、uとX及びZは相関しないという性質を持つ.
+この時誤差項の条件付き期待値<img src="https://latex.codecogs.com/gif.latex?E[u|X,Z]=0" />であり、uとX及びZは相関しないという性質を持つ.
 重回帰分析も単回帰分析と同じく、二乗誤差の最小化問題としてとく・
 
 ##### 回帰分析による効果の推定
-- 介入結果の差分が効果の期待値 -> 施策の係数$\beta_{3}$
+- 介入結果の差分が効果の期待値 -> 施策の係数<img src="https://latex.codecogs.com/gif.latex?\beta_{3}" />
 
 
 ##### 回帰分析における有意差検定
 
-- 推定値$\hat{\beta_{3}}$が母集団上の$\beta_{3}$が0である可能性
+- 推定値<img src="https://latex.codecogs.com/gif.latex?\hat{\beta_{3}}" />が母集団上の<img src="https://latex.codecogs.com/gif.latex?\beta_{3}" />が0である可能性
 - を研修する->有意差検定
 
 ##### 効果検証のための回帰分析で行わないこと
-- $\beta_{treatment}$が興味のある値->介入変数の係数
+
+- <img src="https://latex.codecogs.com/gif.latex?\beta_{treatment}" />が興味のある値->介入変数の係数
 - 介入変数の係数以外の情報は無視する-> 分析の目的から逸れるから
 
 #### 回帰分析におけるバイアス
@@ -194,7 +209,7 @@ $$
 
 ##### Conditional Independence Assumption（CIA）
 - 共変量の選択の理想：モデルに含まれていない変数によるOVBが全て0になる
-- モデルに含めた共変量で条件付けた時に、介入変数が$Y^{(1)}$や$Y^{(1)}$と独立している状態になる -> CIA
+- モデルに含めた共変量で条件付けた時に、介入変数が<img src="https://latex.codecogs.com/gif.latex?Y^{(1)}" />や<img src="https://latex.codecogs.com/gif.latex?Y^{(1)}" />と独立している状態になる -> CIA
 - 解釈としてじゃ共変量が同一のサンプルにおいて、介入Zはランダムに割り振られているのと同じになる
     - 年齢、性別、過去の購買額が同じ値のユーザーに施策を割り振る時、割り振りかたはサイコロを振るのと同じになる -> 割り振る人のバイアスがなくなる？
 
@@ -283,10 +298,9 @@ Angrist et al(2002)はコロンビアで行われた私立学校の学費の割�
     - 共変量が同一のユーザの中では介入の決定はランダムに行われているに等しい
     - 傾向スコアが同一のユーザの(ry
 
-傾向スコア$P(X_{i}$の仮定
-$$
-{Y_{i}^{(1)}, Y_{i}^{(0)}} \perp Z|P(X_{i})
-$$
+傾向スコア<img src="https://latex.codecogs.com/gif.latex?P(X_{i})" />の仮定
+
+<img src="https://latex.codecogs.com/gif.latex?{Y_{i}^{(1)}, Y_{i}^{(0)}} \perp Z|P(X_{i})" />
 
 ##### 傾向スコアの推定
 - 傾向スコアを直接観測はできないが、結果であるZは観測可能
@@ -309,9 +323,11 @@ $$
 
 Average Treatment effect on Treated(ATT)
 介入を受けたサンプルにおける介入効果の期待値
-$$
-\hat{\tau}_{match} = E{E[Y|P(X), Z=1] - E[Y|P(X), Z=-} | Z=1}
-$$
+
+<img src="https://latex.codecogs.com/gif.latex?\hat{\tau}_{match} = E{E[Y|P(X), Z=1] - E[Y|P(X), Z=-} | Z=1}" />
+
+<br>
+<br>
 
 問題点
 - 計算時間が長い
@@ -326,23 +342,22 @@ IPWのアイデア
 - この場合、$Y~{(1)}$が小さいデータほどZ-1のデータには含まれない -> 期待値が過剰に評価されて、推定される効果も過剰になる
 
 IPWでは介入の結果の平均を次のように考える
-$$
-\bar{Y^{(1)}} = \sum_{i=1}^{N} \frac{Z_{i}Y_{i}}{\hat{P(X_{i})}} / \frac{Z_{i}}{\hat{P(X_{i})}}
-$$
+
+
+<img src="https://latex.codecogs.com/gif.latex?\bar{Y^{(1)}} = \sum_{i=1}^{N} \frac{Z_{i}Y_{i}}{\hat{P(X_{i})}} / \frac{Z_{i}}{\hat{P(X_{i})}}" />
+
 
 傾向スコアが大きくなるほど、傾向スコアの逆数が大きくなるため、サンプルに含まれないぶん重みを増加する。
 
 やっていることは縦軸に介入の結果、横軸に傾向スコアをおいた分布を母集団の分布に近づけようとしている。
 
-非介入の結果の推定は確率に$1-\hat{p(X_{i})}を使って行う。
-$$
-\bar{Y^{(0)}} = \sum_{i=1}^{N} \frac{(1-Z_{i})Y_{i}}{1- \hat{P(X_{i})}} / \frac{(1- Z_{i})}{1- \hat{P(X_{i})}}
-$$
+非介入の結果の推定は確率に<img src="https://latex.codecogs.com/gif.latex?1-\hat{p(X_{i})}" />を使って行う。
+
+<img src="https://latex.codecogs.com/gif.latex?\bar{Y^{(0)}} = \sum_{i=1}^{N} \frac{(1-Z_{i})Y_{i}}{1- \hat{P(X_{i})}} / \frac{(1- Z_{i})}{1- \hat{P(X_{i})}}" />
 
 これらよりIPWを用いた効果の推定値は
-$$
-\hat{\tau_{IPW}} = \bar{Y^{(1)}} - \bar{Y^{(0)}} 
-$$
+
+<img src="https://latex.codecogs.com/gif.latex?\hat{\tau_{IPW}} = \bar{Y^{(1)}} - \bar{Y^{(0)}} " />
 
 #### より良い傾向スコアとは
 - 傾向スコアはデータに対する説明力が一定を超えることが重要だと解釈される
