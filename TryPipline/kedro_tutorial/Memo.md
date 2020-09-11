@@ -1,7 +1,7 @@
 # kedro docker作成のref
 poetry でkedro installするときpython バージョンは指定する必要あり
 https://github.com/python-poetry/poetry/issues/1413
-python = "3.7.5"
+python = "3.8.5"
 
 
 まずはkedro get startした
