@@ -14,28 +14,28 @@ services:
     ports:
      - "8080:8080"
     tty: true
-    networks: 
-      - app-net
+    # networks: 
+    #   - app-net
 
-  mysql:
-    container_name: sample-mysql
-    image: mysql:5.7
-    # restart: 'always'
-    hostname: sample-db
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MYSQL_DATABASE: 'test-db'
-      MYSQL_USER: 'root'
-      BIND-ADDRESS: 0.0.0.0
-    expose:
-      - '3306'
-    ports:
-      - "3306:3306"
-    tty: true
-    networks:
-      - app-net
+#   mysql:
+#     container_name: sample-mysql
+#     image: mysql:5.7
+#     # restart: 'always'
+#     hostname: sample-db
+#     environment:
+#       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+#       MYSQL_DATABASE: 'test-db'
+#       MYSQL_USER: 'root'
+#       BIND-ADDRESS: 0.0.0.0
+#     expose:
+#       - '3306'
+#     ports:
+#       - "3306:3306"
+#     tty: true
+#     networks:
+#       - app-net
 
 
-networks:
-  app-net:
-    driver: bridge
+# networks:
+#   app-net:
+#     driver: bridge
