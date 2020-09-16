@@ -338,3 +338,61 @@ https://tech-blog.rakus.co.jp/entry/20180919/nosql/bigdata
 
 
 </details>
+
+# section13 WEBとネットワーク
+
+
+<details>
+<summary>memo</summary>
+
+
+restは大量のリクエストを捌ける
+xml_rpcは記述が簡単なのでちょっとした作業で使う場合がある
+
+networkx ：　ネットワークをグラフで図示するツール
+
+</details>
+
+
+
+</details>
+
+# section14 ユニットテスト
+
+
+<details>
+<summary>memo</summary>
+
+
+
+試した物は
+doctest
+unittest
+pytest
+
+
+python unittest
+- https://qiita.com/aomidro/items/3e3449fde924893f18ca
+- https://docs.python.org/ja/3/library/unittest.html
+
+pytest-cov  pytest-xdist -> テストのカバレッジを表示
+- --cov=calculation(<- test.pyでimportしているやつ)
+- --cov-report term-missing でどの行をテストしていないかも教えてくれる
+
+テストしなくてもいいようなメソッド
+- 単にstringを返すだけのメソッドとか
+- ifのネストはどこまでかくか -> ifの第一階層までは必ずやるのが一般的
+- 失敗が許されない基幹系なら全部やる場合もある
+
+
+pytest と同じようなライブラリ nose
+
+tox virtualenvにパッケージをインストールしてその仮想環境上でテストを実行できる
+
+
+
+どこまでmockするのか
+- いれる値は全てmockする場合もある -> ユニットテストのバグを含む可能性があるから外部要因だけmockする場合が多い
+- つまりはapiとかDBとかから持ってくる場合にmockする
+
+</details>
