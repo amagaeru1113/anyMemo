@@ -359,7 +359,6 @@ networkx ：　ネットワークをグラフで図示するツール
 
 # section14 ユニットテスト
 
-
 <details>
 <summary>memo</summary>
 
@@ -396,3 +395,31 @@ tox virtualenvにパッケージをインストールしてその仮想環境上
 - つまりはapiとかDBとかから持ってくる場合にmockする
 
 </details>
+
+
+
+# section15 並列化
+
+<!-- <details>
+<summary>memo</summary> -->
+
+
+並列に処理を行う場合
+
+- マルチスレッド：コアは共用、スレッドが複数、メモリは共用
+- マルチプロセス：コアが複数、プロセスと対応、メモリもコアに追従
+
+マルチスレッドで使うメソッド
+- Thread：メソッドに処理を切り出して、それをworkerとして渡す。リストにして処理をまとめることができる。
+- Timer：何秒後にスレッドを実行するか指定
+- Lock：スレッドの処理が終わるまで他のスレッドの処理を凍結
+- RLock：Lockでは一回の処理だけしか実行できなかったが、同じスレッド内部なら複数回処理実行可能
+- Queue：スレッド間で値の受け渡しが可能
+- Event：event.set()とevent.wait()でスレッド間の依存関係を記述可能
+- Condition：EventとLockを組み合わせたような処理
+- Barrier：指定の数のスレッドが立ち上がるまで次の処理を凍結
+
+
+参考
+python 並列処理
+https://qiita.com/simonritchie/items/1ce3914eb5444d2157ac
