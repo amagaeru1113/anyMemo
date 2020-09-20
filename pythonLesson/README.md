@@ -400,8 +400,8 @@ tox virtualenvにパッケージをインストールしてその仮想環境上
 
 # section15 並列化
 
-<!-- <details>
-<summary>memo</summary> -->
+<details>
+<summary>memo</summary>
 
 
 並列に処理を行う場合
@@ -435,3 +435,29 @@ tox virtualenvにパッケージをインストールしてその仮想環境上
 参考
 python 並列処理
 https://qiita.com/simonritchie/items/1ce3914eb5444d2157ac
+
+</details>
+
+
+# section16 暗号化
+
+<details>
+<summary>memo</summary>
+
+個人情報や機密情報の取り扱いの際に使う暗号化<br>
+-> 基本的に取り扱うものは文字列<br>
+-> 文字コードが密接に絡む<br>
+-> [新人さんに知って欲しい「文字コード」の話](https://qiita.com/yuji38kwmt/items/b3a7820b4d3b544da4ff)
+
+
+pythonで扱う場合の例として次のライブラリを使用
+- pycrypto（現在はメンテナンスされてないっぽい）
+- hashlib
+
+調べてみた他のライブラリ -> [AES対応のPython暗号化ライブラリを比較検証してみた](https://dev.classmethod.jp/articles/python-crypto-libraries/)
+- PyCryptodome
+- pyca/cryptography
+
+
+
+</details>
