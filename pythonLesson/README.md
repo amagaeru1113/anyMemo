@@ -461,3 +461,46 @@ pythonで扱う場合の例として次のライブラリを使用
 
 
 </details>
+
+
+# section17 インフラ自動化構築の環境に関して
+
+<details>
+<summary>memo</summary>
+
+使用ツール
+- vagrant
+- virtualbox
+
+vargantfileの中身でnetworkの部分はdockerのbridgeで実現するのか？
+
+
+### Fablic デプロイツール
+http://www.fabfile.org/
+
+### Ansible 構成管理ツール
+https://docs.ansible.com/
+
+
+
+
+</details>
+
+
+# section19 グラフィックス
+docker上でのwindowの取り扱いは大分面倒なので、このセクションはコード実行を保証しない
+
+<details>
+<summary>memo</summary>
+
+
+### 簡単な描画ツール：turtle
+- 線を引いたり、塗り潰したりと行ったことが簡単に行える
+- 幾何学模様の作成の際に、forループや再起処理などが学べる
+
+### pythonのGUIツール:tkinter
+- 計算機の作成
+
+
+
+</details>
