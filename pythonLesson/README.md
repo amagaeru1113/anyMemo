@@ -504,3 +504,25 @@ docker上でのwindowの取り扱いは大分面倒なので、このセクシ�
 
 
 </details>
+
+
+# section20 データ解析
+
+
+<details>
+<summary>memo</summary>
+
+- jupyternotebook, numpy, pandasなどの基本操作
+- データマイニング
+- 株価予測
+
+### pandas_datareader:経済データや金融商品の価格データの取得
+
+- 株価ならAlpha Vantage
+- 人口、GDPとかならWorld Bank
+
+速報性には難があるが、金利データを長期的に見るとかなら有用らしい。
+記事の多いブログは[こちら](https://www.mazarimono.net/entry/2018/07/20/pandas_datareader)
+
+
+</details>
