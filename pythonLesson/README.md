@@ -512,6 +512,9 @@ docker上でのwindowの取り扱いは大分面倒なので、このセクシ�
 <details>
 <summary>memo</summary>
 
+`jupyter lab --ip=0.0.0.0 --allow-root`
+
+
 - jupyternotebook, numpy, pandasなどの基本操作
 - データマイニング
 - 株価予測
