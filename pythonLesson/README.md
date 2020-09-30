@@ -529,3 +529,36 @@ docker上でのwindowの取り扱いは大分面倒なので、このセクシ�
 
 
 </details>
+
+
+# section21 キューイングシステム
+
+
+<details>
+<summary>memo</summary>
+
+
+## キューイングシステムとは
+
+[MQとは](http://e-words.jp/w/%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%AD%E3%83%A5%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0.html)
+> メッセージキューイングとは、異なるソフトウェア間でデータを送受信する手法の一つで、直接データを渡すのではなく一旦第三者のソフトウェアに預けることで、送信側も受信側も好きなタイミングで送受信処理をおこなうことができるようにする方式。
+
+- ブローカなし（ZeroMQ）：メモリ上にアクセスして情報を取得する
+- ブローカあり（RabbitMQ、Kafka、Redis）：スケジューリングされたサーバにアクセスして情報を取得する
+
+## ZeroMQ(https://zeromq.org/)
+
+- push:pull　送られるデータが一対一対応になるため、複数のクライアントがあると順番通りのデータが取得できない
+- pub:sub 送られるデータが一対多対応になるため、複数のクライアントで同じ情報が順番通りに取得できる（ただし、リアルタイムなので過去のデータは取得不可能）
+
+
+## RabbitMQ(https://www.rabbitmq.com/)
+オープンソースのメッセージブローカー
+
+## Celery(https://docs.celeryproject.org/en/master/getting-started/first-steps-with-celery.html)
+RabbitMQをPythonで使うための物
+
+[Djangoで使ったりの例](http://taichino.com/programming/python-programming/2811)がある
+
+
+</details>
