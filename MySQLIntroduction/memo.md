@@ -1,6 +1,3 @@
-
-## SQL基礎
-
 ### select文
 
 - 基本は`select 列1, 列2, ... from Table名;`
@@ -59,3 +56,15 @@ https://www.dbonline.jp/mysql/ini/index7.html
 6. order by     : 並び替え条件を指定
 7. limit        : 取得行数の制限
 
+
+### 並び替え
+- order by: ascは昇順（小->大）、descは降順（大->小）
+- 並び順を指定しないと将来的にどんな順番で表示されるかわからない
+- 複数条件で並び替えしたい時はorder byに併記
+- 商品名で並び替えたい時、アルファベットならアルファベット順になる
+- 日本語の場合は文字コード順になる
+
+### 算術演算子
+https://www.dbonline.jp/mysql/ini/index6.html
+
+- nullを含んだ計算の結果はnullになる
