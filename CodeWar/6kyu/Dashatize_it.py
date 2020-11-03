@@ -1,4 +1,4 @@
-# https://www.codewars.com/kata/58223370aef9fc03fd000071/train/python
+# https://www.codewars.com/kata/58223370aef9fc03fd000071
 
 
 def dashatize(num):
