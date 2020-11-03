@@ -15,3 +15,12 @@ udemy講座で書いたコードとか自習の物とか。一応他の人がみ
 写経とメモをおく。因果推論が気になったのでその入門として。
 欠損値の取り扱いが元々気になっていたがこれは因果推論の流派の一つらしいので、このあとはそっちの本を読みたい。
 
+
+## CodeWar
+
+[CodeWar](https://www.codewars.com/dashboard)
+
+取り組んだ問題の回答。
+
+今のランク
+<img width="297" alt="now_kyu" src="https://user-images.githubusercontent.com/59816595/97956087-1c0bfd80-1deb-11eb-98c6-4d4cccfbfbce.png">
