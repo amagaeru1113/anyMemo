@@ -20,3 +20,12 @@ udemy講座で書いたコードとか自習の物とか。一応他の人がみ
 
 実行コードとメモをおく。SQLは少し触れた程度で基礎を改めて学ぶために視聴。
 実務で受けそうな依頼を元にして学んでいくのでどんな時に使うかが分かりやすい。
+
+## CodeWar
+
+[CodeWar](https://www.codewars.com/dashboard)
+
+取り組んだ問題の回答。
+
+今のランク
+<img width="297" alt="now_kyu" src="https://user-images.githubusercontent.com/59816595/97956087-1c0bfd80-1deb-11eb-98c6-4d4cccfbfbce.png">
