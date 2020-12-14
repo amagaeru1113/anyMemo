@@ -8,7 +8,7 @@ setup(
     package=["lessonPackage", "lessonPackage.talk", "lessonPackage.tools"],
     url="example.com",
     license="Free",
-    author="ironball",
+    author="amagaeru",
     autho_email="",
     description="sample package",
 )

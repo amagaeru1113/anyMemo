@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  app:
+    container_name: algorithm_coding
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+        TZ: "Asia/Tokyo"  
+    volumes:
+        - .:/code
+    ports:
+     - "8080:8080"
+     - "8888:8888"
+    tty: true

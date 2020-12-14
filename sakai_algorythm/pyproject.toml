@@ -1,12 +1,14 @@
 [tool.poetry]
-name = "section19"
+name = "sakai_algorythm"
 version = "0.1.0"
 description = ""
 authors = ["amagaeru"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-numpy = "^1.19.2"
+numpy = "^1.19.4"
+pandas = "^1.1.4"
+matplotlib = "^3.3.3"
 
 [tool.poetry.dev-dependencies]
 
